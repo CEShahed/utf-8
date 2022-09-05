@@ -1,6 +1,6 @@
 # پیاده سازی ساده UTF-8
 
-
+این کد برای مقاله [توضیح Unicode و UTF-8](https://virgool.io/CE-SHAHED-publication/unicode-utf8-bgp2kncgmwct) نوشته شده
 
 # basic UTF-8 implementation
 
