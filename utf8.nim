@@ -30,10 +30,9 @@ func group(ch: char): UTF8CharKind =
 func toUtf8*(s: string): UTF8String =
   ## converts normal string `s` to utf-8 string
   for ch in s:
-    if ch.group == partial:
-      result[^1].add ch
-    else:
-      result.add @[ch]
+    case ch.group:
+    of partial: result[^1].add ch
+    else: result.add @[ch]
 
 func `$`*(uch: UTF8Char): string =
   ## convets a utf-8 char `uch` to string
