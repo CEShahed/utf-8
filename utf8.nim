@@ -5,11 +5,11 @@ type
   Unicode* = distinct int
   UTF8Char* = seq[char]
   UTF8String* = seq[UTF8Char]
-  UTF8GroupKind* = enum
+  UTF8CharKind* = enum
     u4, u3, u2, ascii, partial
 
 const
-  utf8Masks: array[UTF8GroupKind, int] = [
+  utf8Masks: array[UTF8CharKind, int] = [
     0b11110_000,
     0b1110_0000,
     0b110_00000,
@@ -17,7 +17,7 @@ const
     0b10_000000]
 
 
-func group(ch: char): UTF8GroupKind =
+func group(ch: char): UTF8CharKind =
   ## returns what group of utf-8 `ch` belongs to
   let i = ord ch
 
